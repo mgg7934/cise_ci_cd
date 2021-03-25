@@ -1,11 +1,14 @@
 name: Lint
+
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [main]
+
 jobs:
   eslint:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -18,4 +21,4 @@ jobs:
           extensions: "js, jsx, ts, tsx"
           annotations: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOK }}
+          GITHUB_TOKEN: ${{ secrets.GIT_TOK}}
