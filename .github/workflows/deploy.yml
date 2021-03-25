@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: npm ci # or yarn install
-        uses: actions/checkout@master
+      # - run: npm ci # or yarn install
+      #   uses: actions/checkout@master
       # - name: login
       #   uses: actions/heroku@master
       #   env:
@@ -26,14 +26,16 @@ jobs:
       #     args: git:remote -a my-app
       # - name: push
       #   run: git subtree push --prefix server heroku master
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_TOK}}
-          heroku_app_name: "cise-ci-cd" #Must be unique in Heroku
-          heroku_email: "mgg7934@hotmail.com"
-          remote_branch: "main"
-      # - uses: CDNievas/heroku-action@v1.0 # This is the action
+      # - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       #   with:
+      #     heroku_api_key: ${{secrets.HEROKU_TOK}}
+      #     heroku_app_name: "cise-ci-cd" #Must be unique in Heroku
       #     heroku_email: "mgg7934@hotmail.com"
-      #     heroku_api_key: ${{secrets.HEROKU_TOKEN}}
-      #     heroku_app_name: "cise-ci-cd"
+      #     remote_branch: "main"
+      - uses: CDNievas/heroku-action@v1.0 # This is the action
+        with:
+          heroku_email: "mgg7934@hotmail.com"
+          heroku_api_key: ${{secrets.HEROKU_TOK}}
+          heroku_app_name: "cise-ci-cd"
+          # buildpack: "https://github.com/HashNuke/heroku-buildpack-elixir.git"
+
