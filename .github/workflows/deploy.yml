@@ -9,6 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_TOK}}
+          heroku_app_name: "cise-ci-cd" #Must be unique in Heroku
+          heroku_email: "mgg7934@hotmail.com"
+          remote_branch: "main"
 
       # - run: npm ci # or yarn install
       #   uses: actions/checkout@master
@@ -26,12 +32,7 @@ jobs:
       #     args: git:remote -a my-app
       # - name: push
       #   run: git subtree push --prefix server heroku master
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_TOK}}
-          heroku_app_name: "cise-ci-cd" #Must be unique in Heroku
-          heroku_email: "mgg7934@hotmail.com"
-          remote_branch: "main"
+
       # - uses: CDNievas/heroku-action@v1.0 # This is the action
       #   with:
       #     heroku_email: "mgg7934@hotmail.com"
