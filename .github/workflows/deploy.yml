@@ -15,13 +15,13 @@ jobs:
       - name: login
         uses: actions/heroku@master
         env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
+          HEROKU_API_KEY: ${{ secrets.HEROKU_TOK }}
         with:
           args: container:login
       - name: set remote
         uses: actions/heroku@master
         env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
+          HEROKU_API_KEY: ${{ secrets.HEROKU_TOK}}
         with:
           args: git:remote -a my-app
       - name: push
