@@ -5,7 +5,11 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:jsx-a11y/recommended",
+        "prettier"
+
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -15,8 +19,19 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "jsx-a11y",
+        "prettier"
+
     ],
     "rules": {
+        "semi": 0,
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "prettier/prettier": [
+            "error", {
+                "semi": false
+            }
+        ]
+
     }
 }
