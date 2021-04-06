@@ -23,6 +23,7 @@
     "lint": "eslint",
     "prettier:fix": "prettier --write .",
     "prettier:check": "prettier --check ."
+    
   },
   "husky": {
     "hooks": {
@@ -30,7 +31,14 @@
     }
   },
   "lint-staged": {
-    "src/**/*.js": ["npm run lint", "git add"]
+    "*.+(js|jsx)": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write",
+      "git add"
+    ]
    
   },
   "eslintConfig": {

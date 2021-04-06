@@ -12,7 +12,7 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_TOK}}
-          heroku_app_name: "cise-ci-cd" 
+          heroku_app_name: "cise-ci-cd"
           heroku_email: "mgg7934@hotmail.com"
           remote_branch: "main"
 
@@ -38,5 +38,4 @@ jobs:
       #     heroku_email: "mgg7934@hotmail.com"
       #     heroku_api_key: ${{secrets.HEROKU_TOK}}
       #     heroku_app_name: "cise-ci-cd"
-          # buildpack: "https://github.com/HashNuke/heroku-buildpack-elixir.git"
-
+      # buildpack: "https://github.com/HashNuke/heroku-buildpack-elixir.git"
